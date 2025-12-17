@@ -59,7 +59,7 @@ const resetGame = () => {
       </section>
 
       <footer class="mt-12 text-center text-gray-400 uppercase text-xs tracking-[0.2em]">
-        Developed by Player 1 • 2025
+        Developed by Super Hero Davishh &copy; 2025. All rights reserved.
       </footer>
 
     </div>
