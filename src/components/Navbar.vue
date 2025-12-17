@@ -45,7 +45,7 @@ const goTo = (page: 'home' | 'about') => {
     <div v-if="isOpen" class="md:hidden border-t-4 border-black bg-white flex flex-col items-center gap-6 py-8">
       <button @click="goTo('home')" class="text-xl font-bold hover:text-blue-600">Home</button>
       <button @click="goTo('about')" class="text-xl font-bold hover:text-blue-600">About</button>
-      <a href="https://github.com/" target="_blank" 
+      <a href="https://github.com/IsMeVit" target="_blank" 
          class="bg-yellow-300 px-6 py-2 border-2 border-black text-lg font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
         Github
       </a>
