@@ -72,7 +72,7 @@ const myStats = ref({
           @click="isCardOpen = true" 
           class="text-blue-500 underline cursor-pointer hover:text-blue-400 transition-colors font-bold"
         >
-          SUPER HERO DAVISHH
+          D4V15HH
         </span> 
         © 2025. ALL RIGHTS RESERVED
       </footer>
