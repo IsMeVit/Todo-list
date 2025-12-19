@@ -26,8 +26,8 @@ const emit = defineEmits(['close'])
             <img v-if="avatarUrl" :src="avatarUrl" alt="Hero" class="w-full h-full object-cover pixelated" />
             <div v-else class="w-full h-full flex items-center justify-center text-4xl">👤</div>
           </div>
-          <h2 class="text-xl font-black uppercase dark:text-white leading-none">Super Hero Davishh</h2>
-          <p class="text-[10px] text-blue-500 font-bold uppercase tracking-widest mt-1">Legendary Developer</p>
+          <h2 class="text-xl font-black uppercase dark:text-white leading-none">D4V15HH [SYSTEM OVERRIDE]</h2>
+          <p class="text-[10px] text-blue-500 font-bold uppercase tracking-widest mt-1">Final Boss</p>
         </div>
 
         <div class="space-y-3 font-bold uppercase text-xs">
