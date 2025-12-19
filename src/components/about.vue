@@ -1,20 +1,28 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import Cards from './Cards.vue'
 
 const userName = ref('Guest');
+const isCardOpen = ref(false); 
+const myAvatar = ref('https://i.pinimg.com/736x/41/6a/cd/416acd7cd5c3c454b610b3980f5c89f5.jpg');
 
 onMounted(() => {
   const savedName = localStorage.getItem('pixel-username');
   if (savedName) userName.value = savedName;
 });
 
-// Method to wipe everything and restart the game
 const resetGame = () => {
   if (confirm("Are you sure you want to delete your save data? All quests and your name will be lost!")) {
     localStorage.clear();
-    window.location.reload(); // Refresh to trigger the "First Time" logic
+    window.location.reload();
   }
 };
+
+const myStats = ref({
+  lvl: '999999',
+  hp: 'Unkillable',
+  exp:'Unlimited'
+})
 </script>
 
 <template>
@@ -22,7 +30,7 @@ const resetGame = () => {
     <div class="max-w-2xl mx-auto">
       
       <header class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-widest border-b-8 border-black inline-block pb-2">
+        <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-widest border-b-8 border-black inline-block pb-2 ">
           Instruction Manual
         </h2>
       </header>
@@ -37,12 +45,12 @@ const resetGame = () => {
 
       <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div class="bg-blue-100 border-4 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          <h4 class="font-bold uppercase mb-2">Current Hero</h4>
+          <h4 class="ffont-bold uppercase mb-2">Current Hero</h4>
           <p class="text-2xl font-bold text-blue-800">{{ userName }}</p>
         </div>
         <div class="bg-yellow-100 border-4 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          <h4 class="font-bold uppercase mb-2">Version</h4>
-          <p class="text-2xl font-bold text-yellow-800">v1.0.1-Pixel</p>
+          <h4 class="font-bold uppercase mb-2 ">Version</h4>
+          <p class="text-2xl font-bold text-yellow-800 ">v1.0.1-Pixel</p>
         </div>
       </section>
 
@@ -58,9 +66,23 @@ const resetGame = () => {
         </button>
       </section>
 
-      <footer class="mt-12 text-center text-gray-400 uppercase text-xs tracking-[0.2em]">
-        Developed by Super Hero Davishh &copy; 2025. All rights reserved.
+      <footer class="mt-10 text-center uppercase text-slate-400 text-xs tracking-widest">
+        DEVELOPED BY 
+        <span 
+          @click="isCardOpen = true" 
+          class="text-blue-500 underline cursor-pointer hover:text-blue-400 transition-colors font-bold"
+        >
+          SUPER HERO DAVISHH
+        </span> 
+        © 2025. ALL RIGHTS RESERVED
       </footer>
+
+      <Cards 
+        :is-open="isCardOpen" 
+        :stats="myStats"
+        :avatar-url="myAvatar"
+        @close="isCardOpen = false" 
+      />
 
     </div>
   </main>
